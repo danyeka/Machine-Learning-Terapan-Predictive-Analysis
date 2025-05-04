@@ -97,25 +97,27 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 ### Explorasi Data
 
 1. Corellation Matrix
+
 ![Correlation Matrix](gambar%20eda/corr.png)
 
-Correlation matrix diatas merepresentasikan hubungan antar fitur, berikut adalah analisisnya:
+   Correlation matrix diatas merepresentasikan hubungan antar fitur, berikut adalah analisisnya:
 
-  - TUE dan Age memiliki korelasi negatif sangat kuat
-  - FAF dan Age memiliki korelasi negatif kuat
-  - FCVC dan TUE memiliki korelasi negatif kuat
-  - Hubungan Weight terhadap TUE dan FAF memeiliki korelasi negatif lemah
+    - TUE dan Age memiliki korelasi negatif sangat kuat
+    - FAF dan Age memiliki korelasi negatif kuat
+    - FCVC dan TUE memiliki korelasi negatif kuat
+    - Hubungan Weight terhadap TUE dan FAF memeiliki korelasi negatif lemah
 
 2. Histogram
 ![Histogram](gambar%20eda/distribusi.png)
 
-Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fitur, berikut analisisnya:
-  - Age: Distribusi skewed ke kiri, sebagian besar data berada pada rentang usia 20-30 tahun.
-  - Height dan Weight: Terdistribusi normal, dengan puncak sekitar tinggi 1.7 meter dan berat 70-90 kg.
-  - FCVC (Frekuensi konsumsi sayur), NCP (Jumlah porsi), dan CH2O (Asupan air): Distribusi sangat terpusat pada nilai diskrit tertentu, menunjukkan perilaku konsumsi konsisten di beberapa level.
-  - FAF (Frekuensi aktivitas fisik) dan TUE (Waktu penggunaan teknologi): Skewed, banyak data mendekati nilai 0 untuk aktivitas fisik, sedangkan TUE lebih terdistribusi rata.
+   Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fitur, berikut analisisnya:
+    - Age: Distribusi skewed ke kiri, sebagian besar data berada pada rentang usia 20-30 tahun.
+    - Height dan Weight: Terdistribusi normal, dengan puncak sekitar tinggi 1.7 meter dan berat 70-90 kg.
+    - FCVC (Frekuensi konsumsi sayur), NCP (Jumlah porsi), dan CH2O (Asupan air): Distribusi sangat terpusat pada nilai diskrit tertentu, menunjukkan perilaku konsumsi konsisten di beberapa level.
+    - FAF (Frekuensi aktivitas fisik) dan TUE (Waktu penggunaan teknologi): Skewed, banyak data mendekati nilai 0 untuk aktivitas fisik, sedangkan TUE lebih terdistribusi rata.
 
 3. Distribusi Jenis Kelamin
+
 ![Gender Distribution](gambar%20eda/gender%20distribution.png)
 
   - Data menunjukkan distribusi hampir seimbang antara Female (50.2%) dan Male (49.8%).
@@ -163,7 +165,8 @@ Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fit
 ## Modeling
 
 1. Decision Tree
-   - Decision Tree memiliki keunggulan dalam interpretasi yang mudah dan mendukung data kategorikal serta numerik. Namun, kelemahannya adalah rentan terhadap overfitting jika depth tree terlalu tinggi, sensitif terhadap data yang tidak seimbang, dan kurang stabil[4].
+
+   Decision Tree memiliki keunggulan dalam interpretasi yang mudah dan mendukung data kategorikal serta numerik. Namun, kelemahannya adalah rentan terhadap overfitting jika depth tree terlalu tinggi, sensitif terhadap data yang tidak seimbang, dan kurang stabil[4].
 
    - Cara kerja Algoritma: 
       1. Membangun pohon keputusan dengan membagi data berdasarkan fitur yang paling informatif
@@ -183,6 +186,7 @@ Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fit
       - average="weighted" untuk menangani ketidakseimbangan kelas
 
 2. XGBoost
+
    XGBoost menawarkan kecepatan, efisiensi, dan kemampuan mengurangi overfitting. Akan tetapi, model ini memiliki kelemahan seperti komputasi intensif, sulit diinterpretasikan, dan memerlukan tuning parameter yang tepat[5].
 
   - Cara kerja Algoritma:
@@ -203,6 +207,7 @@ Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fit
     - average="weighted" untuk penanganan kelas tidak seimbang
 
 3. Random Forest
+
    Random Forest memiliki keunggulan dalam stabilitas dan ketahanan terhadap noise. Namun, kelemahannya adalah komputasi intensif, sulit diinterpretasikan, memerlukan banyak data untuk pelatihan, dan dapat terlalu kompleks[6].
 
   - Cara kerja Algoritma:
@@ -223,6 +228,7 @@ Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fit
     - average="weighted" untuk kelas tidak seimbang
 
 4. Support Vector Machine (SVM)
+
    SVM efektif untuk data dengan dimensi tinggi. Kelemahannya adalah komputasi intensif, sulit diinterpretasikan, memerlukan pemilihan kernel yang tepat, dan dapat terlalu kompleks[7].
 
   - Cara kerja Algoritma:
@@ -243,6 +249,7 @@ Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fit
     - average="weighted" untuk kelas tidak seimbang
 
 5. Logistic Regression
+
    Logistic Regression memiliki keunggulan dalam interpretasi yang mudah dan sederhana. Namun, kelemahannya adalah memerlukan asumsi linearitas, tidak efektif untuk data kompleks, sensitif terhadap outliers, dan kurang stabil dengan data yang tidak seimbang[8].
 
   - Cara kerja Algoritma:
@@ -350,52 +357,52 @@ Untuk mengevaluasi performa model, digunakan beberapa metrik yaitu:
 | LightGBM            | 89.96%   | 89.98%               | 89.96%            | 89.94%              | Signifikan          |
 
 1. Decision Tree
-  - Training Accuracy, Precision, Recall, F1-score: 100%
-  - Testing Accuracy, Precision, Recall, F1-score: 84%
-  - Perbandingan training dan testing akurasi menunjukkan overfitting yang signifikan. 
-  - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
-  - Dan f1-score pada kategori sedang yang berarti model cukup akurat
+    - Training Accuracy, Precision, Recall, F1-score: 100%
+    - Testing Accuracy, Precision, Recall, F1-score: 84%
+    - Perbandingan training dan testing akurasi menunjukkan overfitting yang signifikan. 
+    - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
+    - Dan f1-score pada kategori sedang yang berarti model cukup akurat
 
 2. XGBoost
-  - Training Accuracy, Precision, Recall, F1-score: 92%
-  - Testing Accuracy, Precision, Recall, F1-score: 90%
-  - Perbandingan training dan testing akurasi menunjukkan overfitting namun dengan performa testing yang sangat baik
-  - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
-  - Dan f1-score pada kategori tinggi yang berarti model sangat akurat
+    - Training Accuracy, Precision, Recall, F1-score: 92%
+    - Testing Accuracy, Precision, Recall, F1-score: 90%
+    - Perbandingan training dan testing akurasi menunjukkan overfitting namun dengan performa testing yang sangat baik
+    - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
+    - Dan f1-score pada kategori tinggi yang berarti model sangat akurat
 
 3. Random Forest
-  - Training Accuracy, Precision, Recall, F1-score: 100%
-  - Testing Accuracy, Precision, Recall, F1-score: 90%
-  - Perbandingan training dan testing akurasi menunjukkan overfitting namun dengan performa testing yang sangat baik
-  - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
-  - Dan f1-score pada kategori tinggi yang berarti model sangat akurat
+    - Training Accuracy, Precision, Recall, F1-score: 100%
+    - Testing Accuracy, Precision, Recall, F1-score: 90%
+    - Perbandingan training dan testing akurasi menunjukkan overfitting namun dengan performa testing yang sangat baik
+    - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
+    - Dan f1-score pada kategori tinggi yang berarti model sangat akurat
 
 4. SVM
-  - Training Accuracy, Precision, Recall, F1-score: 90%
-  - Testing Accuracy, Precision, Recall, F1-score: 88%
-  - Performa stabil antara training dan testing
-  - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
-  - Dan f1-score pada kategori sedang yang berarti model cukup akurat
+    - Training Accuracy, Precision, Recall, F1-score: 90%
+    - Testing Accuracy, Precision, Recall, F1-score: 88%
+    - Performa stabil antara training dan testing
+    - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
+    - Dan f1-score pada kategori sedang yang berarti model cukup akurat
 
 5. Logistic Regression
-  - Training Accuracy, Precision, Recall, F1-score: 86.83%
-  - Testing Accuracy, Precision, Recall, F1-score: 87%
-  - Performa konsisten antara training dan testing 
-  - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
-  - Dan f1-score pada kategori tinggi yang berarti model model cukup akurat
+    - Training Accuracy, Precision, Recall, F1-score: 86.83%
+    - Testing Accuracy, Precision, Recall, F1-score: 87%
+    - Performa konsisten antara training dan testing 
+    - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
+    - Dan f1-score pada kategori tinggi yang berarti model model cukup akurat
 
 6. LightGBM
-  - Training Accuracy, Precision, Recall, F1-score: 99%
-  - Testing Accuracy, Precision, Recall, F1-score: 90%
-  - Perbandingan training dan testing akurasi menunjukkan overfitting namun dengan performa testing yang lebih baik
-  - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
-  - Dan f1-score pada kategori tinggi yang berarti model sangat akurat
+    - Training Accuracy, Precision, Recall, F1-score: 99%
+    - Testing Accuracy, Precision, Recall, F1-score: 90%
+    - Perbandingan training dan testing akurasi menunjukkan overfitting namun dengan performa testing yang lebih baik
+    - Precision dan recall yang cukup seimbang pada tiap-tiap training dan testing
+    - Dan f1-score pada kategori tinggi yang berarti model sangat akurat
 
 **Kesimpulan Evaluasi Model**
-  - Performa terbaik: XGBoost, Random Forest, dan LightGBM  memberikan performa dan classification report tertinggi, namun LightGBM cukup overfit, sedangkan XGBoost memiliki  performa yang stabil antara tarining dan testing, meskipun ketiganya sama sama memiliki hasil testing akurasi, precision, recall, f1-score pada angka 90%.
-  - Overfitting: Decision Tree, Random Forest, dan LightGBM cenderung overfit pada data training.
+    - Performa terbaik: XGBoost, Random Forest, dan LightGBM  memberikan performa dan classification report tertinggi, namun LightGBM cukup overfit, sedangkan XGBoost memiliki  performa yang stabil antara tarining dan testing, meskipun ketiganya sama sama memiliki hasil testing akurasi, precision, recall, f1-score pada angka 90%.
+    - Overfitting: Decision Tree, Random Forest, dan LightGBM cenderung overfit pada data training.
 
-  catatan: angka akurasi, precision, recall, f1-score telah dilakukan pembulatan ke atas dan ke bawah
+    catatan: angka akurasi, precision, recall, f1-score telah dilakukan pembulatan ke atas dan ke bawah
 
 ### Kesimpulan
 
