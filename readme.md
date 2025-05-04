@@ -189,105 +189,105 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 
    XGBoost menawarkan kecepatan, efisiensi, dan kemampuan mengurangi overfitting. Akan tetapi, model ini memiliki kelemahan seperti komputasi intensif, sulit diinterpretasikan, dan memerlukan tuning parameter yang tepat[5].
 
-  - Cara kerja Algoritma:
-    1. Membangun model secara bertahap (boosting)
-    2. Setiap iterasi fokus pada sampel yang salah diprediksi sebelumnya
-    3. Menggunakan gradient descent untuk optimasi
-    4. Menggabungkan hasil prediksi dari semua model lemah
+    - Cara kerja Algoritma:
+      1. Membangun model secara bertahap (boosting)
+      2. Setiap iterasi fokus pada sampel yang salah diprediksi sebelumnya
+      3. Menggunakan gradient descent untuk optimasi
+      4. Menggabungkan hasil prediksi dari semua model lemah
 
-  - Tahapan:
-    1. Inisialisasi model GradientBoostingClassifier
-    2. Melatih model dengan data training yang telah diproses
-    3. Melakukan prediksi bertahap
-    4. Mengevaluasi hasil dengan metrik weighted average
+    - Tahapan:
+      1. Inisialisasi model GradientBoostingClassifier
+      2. Melatih model dengan data training yang telah diproses
+      3. Melakukan prediksi bertahap
+      4. Mengevaluasi hasil dengan metrik weighted average
 
-  - Parameter:
-    - Menggunakan parameter default untuk learning rate
-    - Menggunakan parameter default untuk jumlah estimator
-    - average="weighted" untuk penanganan kelas tidak seimbang
+    - Parameter:
+      - Menggunakan parameter default untuk learning rate
+      - Menggunakan parameter default untuk jumlah estimator
+      - average="weighted" untuk penanganan kelas tidak seimbang
 
 3. Random Forest
 
    Random Forest memiliki keunggulan dalam stabilitas dan ketahanan terhadap noise. Namun, kelemahannya adalah komputasi intensif, sulit diinterpretasikan, memerlukan banyak data untuk pelatihan, dan dapat terlalu kompleks[6].
 
-  - Cara kerja Algoritma:
-    1. Membuat multiple decision tree secara paralel
-    2. Setiap tree dilatih dengan subset data random (bagging)
-    3. Setiap tree menggunakan subset fitur random
-    4. Menggabungkan hasil prediksi melalui voting mayoritas
+    - Cara kerja Algoritma:
+      1. Membuat multiple decision tree secara paralel
+      2. Setiap tree dilatih dengan subset data random (bagging)
+      3. Setiap tree menggunakan subset fitur random
+      4. Menggabungkan hasil prediksi melalui voting mayoritas
 
-  - Tahapan:
-    1. Inisialisasi RandomForestClassifier dengan n_estimators=100
-    2. Melatih model dengan data training
-    3. Melakukan ensemble prediction
-    4. Evaluasi menggunakan metrik weighted average
+    - Tahapan:
+      1. Inisialisasi RandomForestClassifier dengan n_estimators=100
+      2. Melatih model dengan data training
+      3. Melakukan ensemble prediction
+      4. Evaluasi menggunakan metrik weighted average
 
-  - Parameter:
-    - n_estimators=100 (jumlah pohon)
-    - Menggunakan parameter default untuk kriteria split
-    - average="weighted" untuk kelas tidak seimbang
+    - Parameter:
+      - n_estimators=100 (jumlah pohon)
+      - Menggunakan parameter default untuk kriteria split
+      - average="weighted" untuk kelas tidak seimbang
 
 4. Support Vector Machine (SVM)
 
    SVM efektif untuk data dengan dimensi tinggi. Kelemahannya adalah komputasi intensif, sulit diinterpretasikan, memerlukan pemilihan kernel yang tepat, dan dapat terlalu kompleks[7].
 
-  - Cara kerja Algoritma:
-    1. Mencari hyperplane optimal untuk memisahkan kelas
-    2. Menggunakan kernel trick untuk data non-linear
-    3. Memaksimalkan margin antara kelas
-    4. Menggunakan support vectors untuk klasifikasi
+    - Cara kerja Algoritma:
+      1. Mencari hyperplane optimal untuk memisahkan kelas
+      2. Menggunakan kernel trick untuk data non-linear
+      3. Memaksimalkan margin antara kelas
+      4. Menggunakan support vectors untuk klasifikasi
 
-  - Tahapan:
-    1. Inisialisasi SVC dengan kernel='rbf'
-    2. Melatih model dengan data training terstandarisasi
-    3. Melakukan prediksi
-    4. Evaluasi dengan metrik weighted average
+    - Tahapan:
+      1. Inisialisasi SVC dengan kernel='rbf'
+      2. Melatih model dengan data training terstandarisasi
+      3. Melakukan prediksi
+      4. Evaluasi dengan metrik weighted average
 
-  - Parameter:
-    - kernel='rbf' untuk data non-linear
-    - random_state=2024
-    - average="weighted" untuk kelas tidak seimbang
+    - Parameter:
+      - kernel='rbf' untuk data non-linear
+      - random_state=2024
+      - average="weighted" untuk kelas tidak seimbang
 
 5. Logistic Regression
 
    Logistic Regression memiliki keunggulan dalam interpretasi yang mudah dan sederhana. Namun, kelemahannya adalah memerlukan asumsi linearitas, tidak efektif untuk data kompleks, sensitif terhadap outliers, dan kurang stabil dengan data yang tidak seimbang[8].
 
-  - Cara kerja Algoritma:
-    1. Memodelkan probabilitas kelas menggunakan fungsi logistik
-    2. Menggunakan multinomial untuk multi-kelas
-    3. Optimasi menggunakan gradient descent
-    4. Menghasilkan probabilitas untuk setiap kelas
+    - Cara kerja Algoritma:
+      1. Memodelkan probabilitas kelas menggunakan fungsi logistik
+      2. Menggunakan multinomial untuk multi-kelas
+      3. Optimasi menggunakan gradient descent
+      4. Menghasilkan probabilitas untuk setiap kelas
 
-  - Tahapan:
-    1. Inisialisasi LogisticRegression dengan multi_class='multinomial'
-    2. Melatih model dengan max_iter=1000
-    3. Melakukan prediksi probabilistik
-    4. Evaluasi menggunakan metrik weighted average
+    - Tahapan:
+      1. Inisialisasi LogisticRegression dengan multi_class='multinomial'
+      2. Melatih model dengan max_iter=1000
+      3. Melakukan prediksi probabilistik
+      4. Evaluasi menggunakan metrik weighted average
 
-  - Parameter:
-    - multi_class='multinomial'
-    - max_iter=1000
-    - average="weighted"
+    - Parameter:
+      - multi_class='multinomial'
+      - max_iter=1000
+      - average="weighted"
 
 6. LightGBM
    LightGBM menawarkan waktu pelatihan cepat dan performa optimal. Kelemahannya adalah komputasi intensif, sulit diinterpretasikan, memerlukan tuning parameter yang tepat, dan dapat terlalu kompleks[9].
 
-  - Cara kerja Algoritma:
-    1. Menggunakan teknik gradient boosting
-    2. Melakukan optimasi leaf-wise
-    3. Menggunakan histogram-based learning
-    4. Menerapkan parallel learning
+    - Cara kerja Algoritma:
+      1. Menggunakan teknik gradient boosting
+      2. Melakukan optimasi leaf-wise
+      3. Menggunakan histogram-based learning
+      4. Menerapkan parallel learning
 
-  - Tahapan:
-    1. Inisialisasi LGBMClassifier
-    2. Melatih model dengan data training
-    3. Melakukan prediksi bertahap
-    4. Evaluasi menggunakan metrik weighted average
+    - Tahapan:
+      1. Inisialisasi LGBMClassifier
+      2. Melatih model dengan data training
+      3. Melakukan prediksi bertahap
+      4. Evaluasi menggunakan metrik weighted average
 
-  - Parameter:
-    - Parameter default untuk learning rate
-    - Parameter default untuk jumlah leaves
-    - average="weighted" untuk kelas tidak seimbang
+    - Parameter:
+      - Parameter default untuk learning rate
+      - Parameter default untuk jumlah leaves
+      - average="weighted" untuk kelas tidak seimbang
 
 ## Evaluation
 
@@ -399,10 +399,10 @@ Untuk mengevaluasi performa model, digunakan beberapa metrik yaitu:
     - Dan f1-score pada kategori tinggi yang berarti model sangat akurat
 
 **Kesimpulan Evaluasi Model**
-    - Performa terbaik: XGBoost, Random Forest, dan LightGBM  memberikan performa dan classification report tertinggi, namun LightGBM cukup overfit, sedangkan XGBoost memiliki  performa yang stabil antara tarining dan testing, meskipun ketiganya sama sama memiliki hasil testing akurasi, precision, recall, f1-score pada angka 90%.
-    - Overfitting: Decision Tree, Random Forest, dan LightGBM cenderung overfit pada data training.
+   - Performa terbaik: XGBoost, Random Forest, dan LightGBM  memberikan performa dan classification report tertinggi, namun LightGBM cukup overfit, sedangkan XGBoost memiliki  performa yang stabil antara tarining dan testing, meskipun ketiganya sama sama memiliki hasil testing akurasi, precision, recall, f1-score pada angka 90%.
+   - Overfitting: Decision Tree, Random Forest, dan LightGBM cenderung overfit pada data training.
 
-    catatan: angka akurasi, precision, recall, f1-score telah dilakukan pembulatan ke atas dan ke bawah
+   catatan: angka akurasi, precision, recall, f1-score telah dilakukan pembulatan ke atas dan ke bawah
 
 ### Kesimpulan
 
@@ -437,7 +437,7 @@ Dengan mengembangkan model predictive analysis, saya berhasil menjawab tantangan
 
 **Rekomendasi:**
 
-  - Berdasarkan hasil pekerjaan ini, saya merekomendasikan pengimplementasian model XGBoost untuk sistem prediksi obesitas, karena mencapai performa paling tinggi dan paling stabil dibanding algoritma lain.
+    - Berdasarkan hasil pekerjaan ini, saya merekomendasikan pengimplementasian model XGBoost untuk sistem prediksi obesitas, karena mencapai performa paling tinggi dan paling stabil dibanding algoritma lain.
 
 
 
