@@ -223,7 +223,7 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
       4. Evaluasi menggunakan metrik weighted average
 
     - Parameter:
-      - n_estimators=100 (jumlah pohon)
+      - menggunakan parameter default
       - Menggunakan parameter default untuk kriteria split
       - average="weighted" untuk kelas tidak seimbang
 
