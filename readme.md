@@ -4,7 +4,13 @@
 
 ### Latar Belakang
 
-Proyek ini bertujuan untuk memprediksi tingkat obesitas berdasarkan berbagai fitur dari individu, seperti umur, tinggi badan, berat badan, dan kebiasaan gaya hidup lainnya. Dataset akan digunakan untuk melatih beberapa model machine learning, termasuk Decision Tree, XGBoost, Random Forest, SVM, Logistic Regression, dan LightGBM. Hasil dari model-model tersebut akan dibandingkan dan dievaluasi untuk memilih model yang paling tepat dalam memprediksi tingkat obesitas menggunakan metrik-metrik seperti akurasi, precision, recall, dan f1-score.
+Obesitas adalah salah satu masalah kesehatan yang terus meningkat di dunia, termasuk di Indonesia. Gaya hidup modern yang cenderung tidak sehat, seperti konsumsi makanan cepat saji, kurangnya aktivitas fisik, dan pola tidur yang buruk, menjadi penyebab utama meningkatnya jumlah penderita obesitas. Kondisi ini berdampak pada meningkatnya risiko penyakit kronis seperti diabetes tipe 2, hipertensi, penyakit jantung, hingga gangguan mental.
+
+Sayangnya, banyak individu tidak menyadari bahwa mereka berada dalam kelompok berisiko obesitas sampai gejala serius muncul. Oleh karena itu, deteksi dini sangat penting agar upaya pencegahan dan penanganan dapat dilakukan lebih cepat dan tepat.
+
+Dalam konteks ini, pendekatan machine learning menjadi relevan karena mampu mengolah data dalam jumlah besar dan kompleks untuk mengidentifikasi pola-pola tersembunyi yang berkaitan dengan obesitas. Dengan memanfaatkan data seperti umur, berat badan, tinggi badan, pola makan, dan kebiasaan hidup lainnya, kita dapat membangun model prediktif yang mampu mengklasifikasikan tingkat obesitas seseorang secara otomatis dan akurat.
+
+Proyek ini bertujuan untuk menjawab kebutuhan tersebut dengan membangun sistem klasifikasi tingkat obesitas berbasis machine learning, yang tidak hanya cepat dan efisien, tetapi juga dapat digunakan untuk mendukung pengambilan keputusan medis atau kebijakan kesehatan masyarakat.
 
 ### Pentingnya Proyek
 Pengembangan sistem prediksi ini penting karena beberapa alasan:
@@ -138,15 +144,18 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 ## Data Preparation
 1. Penanganan Missing Values.
 
-   Dilakukan pemeriksaan nilai yang hilang menggunakan metode .isna().any() pada dataset. Hasil pemeriksaan menunjukkan bahwa tidak terdapat missing value pada seluruh kolom di dataset pelatihan.
+   - Dilakukan pemeriksaan nilai yang hilang menggunakan metode .isna().any() pada dataset. 
+   - Hasil pemeriksaan menunjukkan bahwa tidak terdapat missing value pada seluruh kolom di dataset pelatihan.
 
 2. Penanganan Data Duplikat 
 
-   Dilakukan pemeriksaan data duplikat menggunakan metode .duplicated().sum(). Hasilnya menunjukkan bahwa tidak ditemukan data duplikat dalam dataset pelatihan.
+   - Dilakukan pemeriksaan data duplikat menggunakan metode .duplicated().sum(). 
+   - Hasilnya menunjukkan bahwa tidak ditemukan data duplikat dalam dataset pelatihan.
 
 3. Penanganan Outliers:
 
-   Deteksi Outlier: Outlier pada fitur-fitur numerik (Age, Height, Weight, NCP, CH2O, FAF, TUE) dideteksi menggunakan metode Interquartile Range (IQR), dengan visualisasi melalui box plot. Batas bawah (Q1 - 1.5 * IQR) dan batas atas (Q3 + 1.5 * IQR) dihitung untuk setiap fitur numerik.
+   - Deteksi Outlier: Outlier pada fitur-fitur numerik (Age, Height, Weight, NCP, CH2O, FAF, TUE) dideteksi menggunakan metode Interquartile Range (IQR), dengan visualisasi melalui box plot. 
+   - Batas bawah (Q1 - 1.5 * IQR) dan batas atas (Q3 + 1.5 * IQR) dihitung untuk setiap fitur numerik.
 
    Keputusan Penanganan: Meskipun terdeteksi adanya outlier pada beberapa fitur seperti Age, Height, dan NCP, nilai-nilai tersebut tidak dihapus karena dianggap masih berada dalam rentang yang masuk akal dan relevan untuk konteks analisis obesitas.
 
@@ -154,7 +163,10 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 
    Rekayasa fitur atau feature engineering adalah proses membuat, mengubah, atau memilih fitur yang berkontribusi dalam membangun model machine learning yang berperforma lebih baik[3].
 
-   Terdapat fitur yang dapat kita buat dari fitur yang ada yaitu BMI (Body Mass Index). BMI merupakan indikator yang akurat untuk mengukur proporsi tubuh dan menilai risiko penyakit terkait obesitas, seperti diabetes, hipertensi dan penyakit jantung. Dengan mengkalkulasi BMI, dapat ditentukan tingkat keparahan obesitas dan strategi pencegahan serta pengobatan yang tepat. Selain itu, BMI juga membantu mengidentifikasi individu berisiko tinggi, memantau perubahan berat badan dan menentukan kebutuhan nutrisi. Oleh karena itu, pengkalkulasian BMI menjadi salah satu faktor penting dalam prediksi obesitas. Rumus: BMI = Weight / Height
+   - Terdapat fitur yang dapat kita buat dari fitur yang ada yaitu BMI (Body Mass Index). 
+   - BMI merupakan indikator yang akurat untuk mengukur proporsi tubuh dan menilai risiko penyakit terkait obesitas, seperti diabetes, hipertensi dan penyakit jantung. Dengan mengkalkulasi BMI, dapat ditentukan tingkat keparahan obesitas dan strategi pencegahan serta pengobatan yang tepat. 
+   - Selain itu, BMI juga membantu mengidentifikasi individu berisiko tinggi, memantau perubahan berat badan dan menentukan kebutuhan nutrisi. Oleh karena itu, pengkalkulasian BMI menjadi salah satu faktor penting dalam prediksi obesitas. 
+   - Rumus: BMI = Weight / Height
 
 3. Pembagian Data (Splitting Data)
 
@@ -167,6 +179,9 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
    - Pembuatan Preprocessor : Mengubah variabel kategorikal menjadi representasi numerik menggunakan One-Hot Encoding dan mengubah skala fitur numerik menjadi skala seragam menggunakan StandardScaler.
    - Pembuatan Pipeline : Preprocessor sebagai fungsi melakukan proses standarisasi dan encoding digabungkan sebagai Pipeline dari library scikit-learn.
    - Transformasi Data : Menerapkan preprocessing (standarisasi dan encoding)  pada data latih dan data uji untuk mempersiapkan data bagi model.
+
+4. Data Balancing
+   - Dataset target (NObeyesdad) menunjukkan ketidakseimbangan kelas. Oleh karena itu, metrik evaluasi menggunakan weighted average untuk mengatasi bias saat evaluasi.
 
 
 ## Modeling
