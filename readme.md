@@ -98,7 +98,7 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 
 1. Corellation Matrix
 
-![Correlation Matrix](gambar%20eda/corr.png)
+![Correlation Matrix]
 ![corr](https://github.com/user-attachments/assets/8a05b591-77a0-40d3-80dc-81af6af78c15)
 
    Correlation matrix diatas merepresentasikan hubungan antar fitur, berikut adalah analisisnya:
@@ -109,7 +109,9 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
     - Hubungan Weight terhadap TUE dan FAF memeiliki korelasi negatif lemah
 
 2. Histogram
-![Histogram](gambar%20eda/distribusi.png)
+![Histogram]
+![distribusi](https://github.com/user-attachments/assets/00268d89-5b98-479e-b23c-c0995e6280fd)
+
 
    Histogram-histogram di atas merepresentasikan distribusi data untuk sembilan fitur, berikut analisisnya:
     - Age: Distribusi skewed ke kiri, sebagian besar data berada pada rentang usia 20-30 tahun.
@@ -117,14 +119,18 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
     - FCVC (Frekuensi konsumsi sayur), NCP (Jumlah porsi), dan CH2O (Asupan air): Distribusi sangat terpusat pada nilai diskrit tertentu, menunjukkan perilaku konsumsi konsisten di beberapa level.
     - FAF (Frekuensi aktivitas fisik) dan TUE (Waktu penggunaan teknologi): Skewed, banyak data mendekati nilai 0 untuk aktivitas fisik, sedangkan TUE lebih terdistribusi rata.
 
-3. Distribusi Jenis Kelamin
+4. Distribusi Jenis Kelamin
 
-![Gender Distribution](gambar%20eda/gender%20distribution.png)
+![Gender Distribution]
+![gender distribution](https://github.com/user-attachments/assets/8456d928-1dec-41af-a6f4-d98e975ffe26)
+
 
   - Data menunjukkan distribusi hampir seimbang antara Female (50.2%) dan Male (49.8%).
 
 4. Distribusi berdasarkan Kategori Obesitas
-![Distribusi per Tipe Obesitas](gambar%20eda/distribusi%20per%20tipe%20obesitas.png)
+![Distribusi per Tipe Obesitas]
+![distribusi per tipe obesitas](https://github.com/user-attachments/assets/75d64eb9-50c2-499f-80c2-fc01fdaa6b37)
+
 
   - Ditemukan bahwa distribusi berdasarkan kategori kelas obesitas tidak merata
 
