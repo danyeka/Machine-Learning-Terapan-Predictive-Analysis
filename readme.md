@@ -104,7 +104,6 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 
 1. Corellation Matrix
 
-![Correlation Matrix]
 ![corr](https://github.com/user-attachments/assets/8a05b591-77a0-40d3-80dc-81af6af78c15)
 
    Correlation matrix diatas merepresentasikan hubungan antar fitur, berikut adalah analisisnya:
@@ -115,7 +114,7 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
     - Hubungan Weight terhadap TUE dan FAF memeiliki korelasi negatif lemah
 
 2. Histogram
-![Histogram]
+
 ![distribusi](https://github.com/user-attachments/assets/00268d89-5b98-479e-b23c-c0995e6280fd)
 
 
@@ -127,14 +126,14 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 
 4. Distribusi Jenis Kelamin
 
-![Gender Distribution]
+
 ![gender distribution](https://github.com/user-attachments/assets/8456d928-1dec-41af-a6f4-d98e975ffe26)
 
 
   - Data menunjukkan distribusi hampir seimbang antara Female (50.2%) dan Male (49.8%).
 
 4. Distribusi berdasarkan Kategori Obesitas
-![Distribusi per Tipe Obesitas]
+
 ![distribusi per tipe obesitas](https://github.com/user-attachments/assets/75d64eb9-50c2-499f-80c2-fc01fdaa6b37)
 
 
