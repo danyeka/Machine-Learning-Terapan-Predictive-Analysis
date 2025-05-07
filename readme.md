@@ -99,6 +99,7 @@ https://www.kaggle.com/competitions/playground-series-s4e2/data
 1. Corellation Matrix
 
 ![Correlation Matrix](gambar%20eda/corr.png)
+![corr](https://github.com/user-attachments/assets/8a05b591-77a0-40d3-80dc-81af6af78c15)
 
    Correlation matrix diatas merepresentasikan hubungan antar fitur, berikut adalah analisisnya:
 
